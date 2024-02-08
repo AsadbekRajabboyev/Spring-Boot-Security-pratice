@@ -11,7 +11,7 @@ public class Product {
 	@Column(name = "id")
 	private int id;
 	@Column(name = "name")
-	private String productName;
+	private String name;
 	@Column(name = "count")
 	private int productCount;
 	@Column(name = "date_recieved")
@@ -20,8 +20,8 @@ public class Product {
 	@JoinColumn(name = "user_id", referencedColumnName = "id")
 	private User owner;
 
-	public Product(String productName, int productCount, LocalDateTime dateReceived, User owner) {
-		this.productName = productName;
+	public Product(String Name, int productCount, LocalDateTime dateReceived, User owner) {
+		this.name = Name;
 		this.productCount = productCount;
 		this.dateReceived = dateReceived;
 		this.owner = owner;
@@ -30,9 +30,9 @@ public class Product {
 	public Product() {
 	}
 
-	public Product(int id, String productName, int productCount, LocalDateTime dateReceived, User owner) {
+	public Product(int id, String Name, int productCount, LocalDateTime dateReceived, User owner) {
 		this.id = id;
-		this.productName = productName;
+		this.name = Name;
 		this.productCount = productCount;
 		this.dateReceived = dateReceived;
 		this.owner = owner;
@@ -70,11 +70,11 @@ public class Product {
 		this.id = id;
 	}
 
-	public String getProductName() {
-		return productName;
+	public String getName() {
+		return name;
 	}
 
-	public void setProductName(String productName) {
-		this.productName = productName;
+	public void setName(String name) {
+		this.name = name;
 	}
 }
